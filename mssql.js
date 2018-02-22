@@ -88,14 +88,14 @@ module.exports = function(RED) {
         		m = msg;
         		rec(msg);
             }).catch(function(err) {
-                node.error(err);
+                node.error(err,msg);
                 node.status({fill:'red',shape:'ring',text:'Error'});
                 return;
             });
 
 
         }).catch(function(err) {
-    		node.error(err);
+    		node.error(err,msg);
     		node.status({fill:'red',shape:'ring',text:'Error'});
     		return;
         });
